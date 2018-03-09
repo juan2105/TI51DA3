@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		function cargar(){
+			var tabla = document.createElement("table");
+			tabla.setAttribute("style", "brillar");
+			tabla.setAttribute("border",1);
+
+			for (x=0; x<3; x++) {
+				var fila = document.createElement("tr")
+				for(y=0; y<3; y++){
+				var columna = document.createElement("td");
+				var texto = document.createTextNode("fila: "+x+" columna "+y);
+				columna.appendChild(texto);
+				fila.appendChild(columna);
+				}
+			tabla.appendChild(fila);
+			}	
+		document.body.appendChild(tabla);
+				}
+		
+	</script>
+	<style>
+		.brillar{
+			background: green;
+			color: #FFF;
+		}
+	</style>
+</head>
+<body onload="cargar()">
+	
+</body>
+</html>
