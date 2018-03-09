@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio onmousemove y onmouseout</title>
+
+	<script>
+		
+		function obtenerPosicion(e)
+		{
+			x=e.clientX;
+			y=e.clientY;
+			x="00"+x.toString(16); //00FF o 0FF
+			y="00"+y.toString(16);
+
+			x=x[x.length-2]+x[x.length-1];
+			x=y[y.length-2]+y[y.length-1];
+
+			/*X = parseInt(x,10).toString(16).toUpperCase();
+			Y=  parseInt(y,10).toString(16).toUpperCase();*/
+			pintar=document.getElementById("focusArea");
+			pintar.style.backgroundColor="#"+x+y+"FF";
+			cursor="El cursor del mouse está: " + x + " y " + y + "<br>" + "El color es: " + x + y + "FF";
+			document.getElementById("displayArea").innerHTML=cursor;
+		}
+
+		function detener()
+		{
+			document.getElementById("displayArea").innerHTML="";
+		}
+
+
+	</script>
+</head>
+
+<body>
+	<h1>Ejercicio colores RBG</h1>
+	<h3>Enventos onmousemove y onmouseout</h3>
+	<div id="focusArea" onmousemove="obtenerPosicion(event)" onmouseout="detener()" style="height: 255px; width:255px; border: 1px solid blue;">
+				<p style="text-align: center";> Mueve el cursor encima del texto</p>
+	</div>
+	<p id="displayArea"></p>
+</body>
+</html>

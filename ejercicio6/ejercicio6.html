@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Añadir y eliminar</title>
+        <style type="text/css">
+            img{
+                width: 100px;
+                height: 100px;
+                size: center;
+            }
+        </style>
+        <script>
+            
+        /**
+
+         * Funcion que añade un <li> dentro del <ul>
+
+         */
+
+       function imagen1(){
+            var nuevo_li = document.createElement("li"); //Se crea un li
+            var img = document.createElement("img"); //Se crea una imagen
+            img.setAttribute("src","mango.jpg");  //Se añade la imagen "mango.jpg" como atributo
+            var enlace = document.createElement("img"); //se crear otra imagen
+            enlace.setAttribute("src","delete.png"); //se añade la imagen "delete.png" como atributo
+            enlace.setAttribute("onclick","eliminar(this);") //Sirve para eliminar la imagen
+            nuevo_li.appendChild(img); //se añade la imagen al nuevo_li
+            nuevo_li.appendChild(enlace); //Se añade enlace al nuevo_li
+            document.getElementById("listado_frutas").appendChild(nuevo_li); //Añade el nodo nuevo_li como hijo de listado_frutas.
+        }
+
+        function imagen2(){
+            var nuevo_li = document.createElement("li"); //Se crea un li
+            var img = document.createElement("img"); //Se crea una imagen
+            img.setAttribute("src","manzana.jpg");  //Se añade la imagen "manzana.jpg" como atributo
+            var enlace = document.createElement("img"); //se crear otra imagen
+            enlace.setAttribute("src","delete.png"); //se añade la imagen "delete.png" como atributo
+            enlace.setAttribute("onclick","eliminar(this);") //Sirve para eliminar la imagen
+            nuevo_li.appendChild(img); //se añade la imagen al nuevo_li
+            nuevo_li.appendChild(enlace); //Se añade enlace al nuevo_li
+            document.getElementById("listado_frutas").appendChild(nuevo_li); //Añade el nodo nuevo_li como hijo de listado_frutas.
+
+        }
+
+        function imagen3(){
+            var nuevo_li = document.createElement("li"); //Se crea un li
+            var img = document.createElement("img"); //Se crea una imagen
+            img.setAttribute("src","fresa.png");  //Se añade la imagen "fresa.png" como atributo
+            var enlace = document.createElement("img"); //se crear otra imagen
+            enlace.setAttribute("src","delete.png"); //se añade la imagen "delete.png" como atributo
+            enlace.setAttribute("onclick","eliminar(this);") //Sirve para eliminar la imagen
+            nuevo_li.appendChild(img); //se añade la imagen al nuevo_li
+            nuevo_li.appendChild(enlace); //Se añade enlace al nuevo_li
+            document.getElementById("listado_frutas").appendChild(nuevo_li); //Añade el nodo nuevo_li como hijo de listado_frutas.
+    }
+
+        /**
+
+         * Funcion para eliminar los elementos
+
+         */
+
+        function eliminar(obj)
+
+        {
+            var eliminar = obj.parentNode;
+            eliminar.parentNode.removeChild(eliminar); //Accede al nodo padre del elemento y lo elimina
+        }
+
+    </script>
+    </head>
+    <body>
+    <div>
+        <center>
+            <h1>Lista de frutas</h1>
+            <h3>Domínguez Juárez Juan Antonio</h3>
+            <img src="mango.jpg" onclick="imagen1()">
+            <img src="manzana.jpg" onclick="imagen2()">
+            <img src="fresa.png" onclick="imagen3()">
+        </center>   
+    </div>
+    <center>
+        <ul id="listado_frutas"></ul>
+    </center>
+        
+    </body>

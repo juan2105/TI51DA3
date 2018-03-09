@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Color RGB</title>
+
+	<style type="text/css">
+		#pintar{
+			width: 255px;
+			height: 255px;
+			transition: background 100ms;
+			margin-top: 30px;
+			border: 1px solid #000;
+		}
+		input{
+    		display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Ejercicio RGB</h1>
+	<h3>Domínguez Juárez Juan Antonio</h3>
+
+	<p id="pintar"></p>
+		<div>
+			Red <input type="range" min="0" max="255" step="1" id="red">	
+			Green <input type="range" min="0" max="255" step="1" id="green">
+     		Blue <input type="range" min="0" max="255" step="1" id="blue">
+     	</div>
+
+	<p id="displayArea"></p>
+	
+	<script type="text/javascript">
+
+	var input = document.querySelectorAll("input");
+		for(var i = 0; i < input.length; i++){
+		input[i].addEventListener("input", function(){
+			var red = document.getElementById("red").value;
+			var green = document.getElementById("green").value;
+			var blue = document.getElementById("blue").value;
+			var pintar = document.getElementById("pintar");
+			pintar.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+
+			cursor="El color es: " + "rgb (" + red + ", " + green + ", " + blue + ")";
+			document.getElementById("displayArea").innerHTML=cursor;
+		});
+	}
+</script>
+
+</body>
+</html>

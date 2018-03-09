@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Agregar Archivo</title>
+    <script>
+        function agregarArchivo() {
+            var p = document.createElement("div"); //Se crea un nuevo div
+            var nuevoElemento = document.createElement("input"); //Se crea un nuevo input
+            nuevoElemento.setAttribute('type', 'file'); //Se agrega de atributo el file 
+            var eliminarElemento = document.createElement("button"); //Se crea un nuevo boton
+            eliminarElemento.innerHTML = "Eliminar"; //Se le pone el nombre de eliminar
+            eliminarElemento.setAttribute('onclick', 'eliminarArchivo(this)'); //Al momento de dar click al boton se elimina el archivo
+            p.appendChild(nuevoElemento); // Se añade nuevoElemento a p
+            p.appendChild(eliminarElemento); //Se añade eliminarElemento a p 
+            document.getElementById("archivo").appendChild(p); //Añade el nodo p como hijo de archivo.
+        }
+
+        function eliminarArchivo(obj) {
+            var eliminar = obj.parentNode;
+            eliminar.parentNode.removeChild(eliminar); //Accede al nodo padre del elemento y lo elimina
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Upload Files(s)</h1>
+    <h3>Domínguez Juárez Juan Antonio</h3>    
+    <div id="archivo"></div>
+    <br>
+    <input type="button" value="Add File" onclick="agregarArchivo()">
+
+   
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario</title>
+
+	<script>
+		
+		function soloNombre(e)
+		{
+			var key = window.Event ? e.which : e.keyCode;
+			return (key >= 97 && key <= 122 || key == 32);
+		}
+
+		function soloFecha(e)
+		{
+			var key = window.Event ? e.which : e.keyCode;
+			return (key >= 48 && key <= 57 || key == 47);
+		}
+
+		function soloTelefono(e)
+		{
+			var key = window.Event ? e.which : e.keyCode;
+			return (key >= 48 && key <= 57 || key == 45 ||key>=40 && key <=41);
+		}
+
+		function soloAltura(e,id)
+		{
+			
+			var key = window.Event ? e.which : e.keyCode;			
+			return (key >= 48 && key <= 57 || key == 46);
+
+			
+			
+			
+		}
+	</script>
+</head>
+
+<body>
+	<H1>Formulario</H1>
+	<form name="form1">
+		<h2>Por favor introduzca la siguiente información:</h2>
+		<br>
+	
+	<div>
+		<label>Nombre</label>
+		<br>
+		<input type="text" id="" value="" onkeypress="return soloNombre(event)" />
+	</div>
+		
+
+	<div>
+		<label>Teléfono</label>
+		<br>
+		<input type="text" id="" value="" onkeypress="return soloTelefono(event)" />
+	</div>
+
+	<div>
+		<label>Fecha de Nacimiento</label>
+		<br>
+		<input type="text" id="" value="" onkeypress="return soloFecha(event)" />
+	</div>
+
+	<div>
+		<label>Estatura</label>
+		<br>
+		<input type="text" id="altura" maxlength ="4" value="" onkeypress="return soloAltura(event,this.id)" />
+	</div>
+		
+	</form>
+</body>
+</html>
